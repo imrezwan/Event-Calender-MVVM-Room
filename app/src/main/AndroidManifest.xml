@@ -11,7 +11,7 @@
         android:theme="@style/Theme.EventCalenderMVVMRoom">
 
         <activity
-            android:name=".MainActivity"
+            android:name=".views.ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

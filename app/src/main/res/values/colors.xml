@@ -2,9 +2,15 @@
 <resources>
     <color name="purple_200">#FFFFFF</color>
     <color name="purple_500">#221F49</color>
+    <color name="selected_date">#4D4797</color>
     <color name="purple_700">#1B1939</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="border_color">#C3BEBE</color>
+    <color name="text_color">#333232</color>
+    <color name="lightest_grey">#FAFAFA</color>
+    <color name="light_grey">#CECECE</color>
+
 </resources>

@@ -1,11 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    tools:context=".views.ui.MainActivity">
 
-    <include layout="@layout/appbar_layout"/>
+    <include
+        android:id="@+id/appbar_layout_id"
+        layout="@layout/appbar_layout" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+        android:background="@color/lightest_grey"
+        android:padding="@dimen/_4sdp"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:id="@+id/rl_monthyear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            >
+
+            <Button
+                android:id="@+id/btn_prev_week"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:foreground="?actionBarItemBackground"
+                android:text="@string/prev"
+                android:onClick="previousWeekAction"
+                android:textAllCaps="false"
+                android:textSize="@dimen/_11sdp" />
+
+            <TextView
+                android:id="@+id/tv_month_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/round_line_bg"
+                android:gravity="center"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:paddingLeft="@dimen/_8sdp"
+                android:paddingRight="@dimen/_8sdp"
+                android:text="January 2021"
+                android:textSize="@dimen/_14sdp" />
+
+            <Button
+                android:id="@+id/btn_next_week"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:foreground="?actionBarItemBackground"
+                android:text="@string/next"
+                android:onClick="nextWeekAction"
+                android:textAllCaps="false"
+                android:gravity="center"
+                android:textSize="@dimen/_11sdp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="SAT"
+                android:textAlignment="center"
+                android:textSize="@dimen/dayname_textSize" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="SUN"
+                android:textAlignment="center"
+                android:textSize="@dimen/dayname_textSize"  />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="MON"
+                android:textAlignment="center"
+                android:textSize="@dimen/dayname_textSize" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TUE"
+                android:textAlignment="center"
+                android:textSize="@dimen/dayname_textSize"  />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="WED"
+                android:textAlignment="center"
+                android:textSize="@dimen/dayname_textSize" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="THUR"
+                android:textAlignment="center"
+                android:textSize="@dimen/dayname_textSize" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="FRI"
+                android:textStyle="bold"
+                android:textColor="@android:color/holo_red_dark"
+                android:textAlignment="center"
+                android:textSize="@dimen/dayname_textSize"  />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_week_days"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5sdp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_2sdp"
+            android:background="@color/light_grey"
+            />
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Event Calender</string>
+    <string name="prev"><![CDATA[< Prev]]></string>
+    <string name="next"><![CDATA[Next >]]></string>
 </resources>
