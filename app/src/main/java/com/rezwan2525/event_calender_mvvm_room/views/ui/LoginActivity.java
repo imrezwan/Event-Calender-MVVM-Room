@@ -22,15 +22,14 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.rezwan2525.event_calender_mvvm_room.R;
 import com.rezwan2525.event_calender_mvvm_room.viewmodels.AuthViewModel;
+import com.rezwan2525.event_calender_mvvm_room.views.commons.AuthCommonActivity;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AuthCommonActivity {
     private static final String TAG = "Login_TAG";
     EditText mEmail, mPassword;
     Button mLoginBtn;
     AuthViewModel authViewModel;
     String email, password;
-
-    Boolean isUserLoggedIn;
 
 
     @Override
@@ -44,21 +43,27 @@ public class LoginActivity extends AppCompatActivity {
         mLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(validate()){
-                    authViewModel.createNewAccount(email, password);
+                email = mEmail.getText().toString();
+                password = mPassword.getText().toString();
+                Log.d(TAG, email+" "+password);
+                if(validate(email, password)){
+                    authViewModel.loggedInUser(email, password);
                 }
             }
         });
 
-        authViewModel.getIsUserLoggedIn().observe(this, new Observer<Boolean>() {
+        authViewModel.getIsUserLoggedIn().observe(LoginActivity.this, new Observer<Boolean>() {
             @Override
             public void onChanged(Boolean aBoolean) {
-                if(aBoolean){
-                    Toast.makeText(LoginActivity.this, "Logged In", Toast.LENGTH_SHORT).show();
-                    goToMainActivity();
-                }
-                else{
-                    Toast.makeText(LoginActivity.this, "Login failed !", Toast.LENGTH_SHORT).show();
+                Log.d(TAG, "LoginOb: "+ aBoolean);
+                if(aBoolean != null){
+                    if(aBoolean){
+                        Toast.makeText(LoginActivity.this, "Logged In", Toast.LENGTH_SHORT).show();
+                        goToMainActivity();
+                    }
+                    else{
+                        Toast.makeText(LoginActivity.this, "Login failed !", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });
@@ -66,20 +71,6 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    private boolean validate() {
-        email = mEmail.getText().toString();
-        password = mPassword.getText().toString();
-
-        if(email != null && !email.isEmpty()){
-            Toast.makeText(this, "Please enter your email", Toast.LENGTH_LONG).show();
-            return false;
-        }
-        else if(password != null && !password.isEmpty()){
-            Toast.makeText(this, "Please enter your password", Toast.LENGTH_LONG).show();
-            return false;
-        }
-        return true;
-    }
 
     private void initWidgets() {
         mEmail = findViewById(R.id.et_email);

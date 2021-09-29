@@ -1,6 +1,7 @@
 package com.rezwan2525.event_calender_mvvm_room.viewmodels;
 
 import android.app.Application;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
@@ -9,8 +10,11 @@ import com.rezwan2525.event_calender_mvvm_room.services.repositories.AuthRepo;
 import com.rezwan2525.event_calender_mvvm_room.services.repositories.OnAuthRepo;
 
 public class AuthViewModel extends AndroidViewModel implements OnAuthRepo {
-    MutableLiveData<Boolean> isAccCreated, isUserLoggedIn;
+    private static String TAG = "AuthVM_TAG";
+    MutableLiveData<Boolean> isAccCreated = new MutableLiveData<>(),
+            isUserLoggedIn = new MutableLiveData<>();
     AuthRepo authRepo;
+
 
     public AuthViewModel(@NonNull Application application) {
         super(application);
@@ -26,20 +30,24 @@ public class AuthViewModel extends AndroidViewModel implements OnAuthRepo {
     }
 
     public MutableLiveData<Boolean> getAccountCreateState(){
+        Log.d(TAG, "Get AcCREATE: "+ isAccCreated.getValue());
         return isAccCreated;
     }
 
     public MutableLiveData<Boolean> getIsUserLoggedIn(){
+        Log.d(TAG, "Get acLogin: "+ isUserLoggedIn.getValue());
         return isUserLoggedIn;
     }
 
     @Override
     public void isAccountCreated(boolean val) {
-        isAccCreated.setValue(val);
+        Log.d(TAG, "IsAcCreate: "+ val);
+        isAccCreated.postValue(val);
     }
 
     @Override
     public void isUserSignedIn(boolean val) {
-        isUserLoggedIn.setValue(val);
+        Log.d(TAG, "IsAcLoggedIn: "+ val);
+        isUserLoggedIn.postValue(val);
     }
 }
