@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/_8sdp"
+    tools:context=".views.ui.LoginActivity">
+
+    <ImageView
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:src="@drawable/ic_calender_blue"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_22sdp"
+        android:text="@string/app_name"
+        android:textStyle="bold"
+        android:layout_margin="@dimen/_8sdp"/>
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:hint="Enter Email Address"
+        android:background="@drawable/round_line_bg"
+        android:textSize="@dimen/_12sdp"
+        android:paddingLeft="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:id="@+id/et_email"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:hint="Enter Password"
+        android:background="@drawable/round_line_bg"
+        android:textSize="@dimen/_12sdp"
+        android:inputType="textPassword"
+        android:paddingLeft="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:id="@+id/et_password"/>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:id="@+id/btn_login"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/create_new_text"
+        android:layout_gravity="center"
+
+        android:gravity="center"/>
+
+</LinearLayout>
