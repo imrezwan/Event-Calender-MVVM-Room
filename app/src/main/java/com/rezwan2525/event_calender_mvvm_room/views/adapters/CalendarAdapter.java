@@ -52,6 +52,7 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.Calend
             if(date.equals(CalendarUtils.selectedDate)) {
                 holder.parentView.setBackgroundColor(context.getColor(R.color.selected_date));
                 holder.dayOfMonth.setTextColor(context.getColor(R.color.white));
+
             }
             else{
                 holder.dayOfMonth.setTextColor(context.getColor(R.color.text_color));

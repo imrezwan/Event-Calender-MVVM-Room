@@ -4,6 +4,7 @@ import static com.rezwan2525.event_calender_mvvm_room.utils.CalendarUtils.daysIn
 import static com.rezwan2525.event_calender_mvvm_room.utils.CalendarUtils.formattedDate;
 import static com.rezwan2525.event_calender_mvvm_room.utils.CalendarUtils.monthYearFromDate;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 
@@ -38,9 +40,6 @@ public class MainActivity extends AppCompatActivity implements IEventInfo {
     EventViewModel eventViewModel;
     EventAdapter eventAdapter;
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,8 +48,6 @@ public class MainActivity extends AppCompatActivity implements IEventInfo {
         initVars();
 
         setWeekViewDates();
-
-
     }
 
     private void setWeekViewDates() {
@@ -59,6 +56,8 @@ public class MainActivity extends AppCompatActivity implements IEventInfo {
 
         ArrayList<LocalDate> days = daysInWeekArray(CalendarUtils.selectedDate);
 
+
+
         mCalerdarAdapter = new CalendarAdapter(this,days, (position, date) -> {
             CalendarUtils.selectedDate = date;
             Log.d(TAG, "clicked: "+ date);
@@ -66,8 +65,6 @@ public class MainActivity extends AppCompatActivity implements IEventInfo {
             setEventViewForEachDate(date);
 
         });
-
-
 
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), 7);
         mCalendarRecycler.setLayoutManager(layoutManager);

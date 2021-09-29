@@ -3,40 +3,42 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-   <LinearLayout
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:id="@+id/ll_event_cell_parent"
-       android:background="@drawable/each_event_bg"
-       android:layout_margin="@dimen/_5sdp"
-       android:padding="@dimen/_8sdp"
-       android:orientation="horizontal">
-       <TextView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="10:10 AM"
-           android:id="@+id/tv_event_time"
-           android:padding="@dimen/_4sdp"
-           android:textSize="@dimen/_12sdp"
-           />
+    <LinearLayout
+        android:id="@+id/ll_event_cell_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_2sdp"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:background="@drawable/each_event_bg"
+        android:orientation="horizontal"
+        android:padding="@dimen/_8sdp">
 
-       <LinearLayout
-           android:layout_width="@dimen/_1sdp"
-           android:layout_height="match_parent"
-           android:background="@color/purple_500"
-           android:id="@+id/ll_divider"
-           android:orientation="vertical"
-           android:layout_margin="@dimen/_4sdp"
-           />
+        <TextView
+            android:id="@+id/tv_event_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_4sdp"
+            android:text="10:10 AM"
+            android:textSize="@dimen/_12sdp" />
 
-       <TextView
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:text="Learn Design Pattern"
-           android:id="@+id/tv_event_title"
-           android:padding="@dimen/_4sdp"
-           android:textSize="@dimen/_12sdp"
-           />
+        <LinearLayout
+            android:id="@+id/ll_divider"
+            android:layout_width="@dimen/_1sdp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/_4sdp"
+            android:background="@color/purple_500"
+            android:orientation="vertical" />
 
-   </LinearLayout>
+        <TextView
+            android:id="@+id/tv_event_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_4sdp"
+            android:text="Learn Design Pattern"
+            android:textSize="@dimen/_12sdp" />
+
+    </LinearLayout>
 </RelativeLayout>

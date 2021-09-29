@@ -13,23 +13,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.rezwan2525.event_calender_mvvm_room.R;
 import com.rezwan2525.event_calender_mvvm_room.services.models.Event;
-import com.rezwan2525.event_calender_mvvm_room.views.customs.ColorCollections;
-import java.util.ArrayList;
+
 import java.util.List;
 
 public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHolder> {
     private Context context;
     private List<Event> eventArrayList;
-    private GradientDrawable gradientDrawable;
-    private int totalColors;
 
     public EventAdapter(Context context, List<Event> eventArrayList) {
         this.context = context;
         this.eventArrayList = eventArrayList;
-        gradientDrawable = new GradientDrawable();
-        gradientDrawable.setCornerRadius(5);
-        ColorCollections colorCollections = new ColorCollections(context); //craete bglist
-        totalColors = ColorCollections.bgList.length;
     }
 
     @NonNull
@@ -42,9 +35,6 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
 
     @Override
     public void onBindViewHolder(@NonNull EventViewHolder holder, int position) {
-        //gradientDrawable.setColor(ColorCollections.bgList[position%totalColors].getBg());
-        //gradientDrawable.setStroke(1, ColorCollections.bgList[position%totalColors].getBorder());
-       // holder.parentLayout.setBackground(gradientDrawable);
         holder.mEventTitle.setText(eventArrayList.get(position).eventTitle);
         holder.mEventTime.setText(eventArrayList.get(position).startTime);
     }
