@@ -7,7 +7,7 @@
     android:gravity="center"
     android:orientation="vertical"
     android:layout_margin="@dimen/_8sdp"
-    tools:context=".views.ui.LoginActivity">
+    tools:context=".views.ui.RegisterActivity">
 
     <ImageView
         android:layout_width="@dimen/_50sdp"
@@ -30,9 +30,9 @@
         android:hint="Enter Email Address"
         android:background="@drawable/round_line_bg"
         android:textSize="@dimen/_12sdp"
+        android:inputType="textEmailAddress"
         android:paddingLeft="@dimen/_10sdp"
         android:layout_marginBottom="@dimen/_10sdp"
-        android:inputType="textEmailAddress"
         android:id="@+id/et_email"/>
 
     <EditText
@@ -50,16 +50,16 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"
-        android:id="@+id/btn_login"
+        android:text="Register"
+        android:id="@+id/btn_register"
         />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/create_new_text"
+        android:text="@string/already_acc_text"
         android:layout_gravity="center"
-        android:onClick="gotoRegisterScreen"
+        android:onClick="gotoLoginScreen"
         android:foreground="?actionBarItemBackground"
         android:gravity="center"/>
 
