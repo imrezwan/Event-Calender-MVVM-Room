@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/_10sdp"
+    tools:context=".views.ui.ProfileActivity">
+
+
+    <ImageView
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="@dimen/_150sdp"
+        android:src="@drawable/ic_user"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/_10sdp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:background="#DDDEE4"
+        android:padding="@dimen/_6sdp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="@dimen/_14sdp"
+        android:textColor="@color/purple_500"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="rezwan2525@gmail.com"
+        android:padding="@dimen/_6sdp"
+        android:layout_gravity="center"
+        android:background="@color/lightest_grey"
+        android:gravity="center"
+        android:textSize="@dimen/_14sdp"
+        android:textColor="@color/purple_500"
+        android:drawableLeft="@drawable/ic_baseline_email"
+        android:layout_marginBottom="@dimen/_15sdp"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cloud Backup"
+        android:drawableLeft="@drawable/ic_baseline_backup"
+        android:backgroundTint="@color/green_500"
+        android:id="@+id/btn_cloud_backup"
+        android:foreground="?actionBarItemBackground"
+        android:layout_marginBottom="@dimen/_15sdp"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Restore from Cloud"
+        android:drawableLeft="@drawable/ic_baseline_restore"
+        android:backgroundTint="@color/green_500"
+        android:id="@+id/btn_restore"
+        android:foreground="?actionBarItemBackground"
+        />
+
+</LinearLayout>

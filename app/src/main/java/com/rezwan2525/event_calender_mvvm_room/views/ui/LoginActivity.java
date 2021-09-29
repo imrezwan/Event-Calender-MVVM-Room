@@ -93,6 +93,7 @@ public class LoginActivity extends AuthCommonActivity {
         if (user != null) {
             goToMainActivity();
         }
+
     }
 
     private void goToMainActivity() {

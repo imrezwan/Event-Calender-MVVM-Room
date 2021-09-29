@@ -4,19 +4,20 @@ import static com.rezwan2525.event_calender_mvvm_room.utils.CalendarUtils.daysIn
 import static com.rezwan2525.event_calender_mvvm_room.utils.CalendarUtils.formattedDate;
 import static com.rezwan2525.event_calender_mvvm_room.utils.CalendarUtils.monthYearFromDate;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.MotionEvent;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.rezwan2525.event_calender_mvvm_room.R;
 import com.rezwan2525.event_calender_mvvm_room.services.models.Event;
@@ -29,10 +30,10 @@ import com.rezwan2525.event_calender_mvvm_room.views.customs.IEventInfo;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.zip.Inflater;
 
 public class MainActivity extends AppCompatActivity implements IEventInfo {
-    private static String TAG = "MainActivityTAG";
+    private final static String TAG = "MainActivityTAG";
     RecyclerView mCalendarRecycler, mEventRecycler;
     CalendarAdapter mCalerdarAdapter;
     TextView   mMonthYear, mEventDate;
@@ -119,5 +120,11 @@ public class MainActivity extends AppCompatActivity implements IEventInfo {
     public void sendInsertRequest(Event event) {
         Log.d(TAG, "DATA: "+ event.toString());
         eventViewModel.insertEvent(event);
+    }
+
+
+    private void goToProfilePage() {
+        startActivity(new Intent(this, ProfileActivity.class));
+        overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
     }
 }
