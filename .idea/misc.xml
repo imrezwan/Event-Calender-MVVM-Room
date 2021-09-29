@@ -4,12 +4,20 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Projects/PROJECT 50/Learning/EventCalenderMVVMRoom/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.26296296296296295" />
+        <entry key="..\:/Projects/PROJECT 50/Learning/EventCalenderMVVMRoom/app/src/main/res/drawable/each_event_bg.xml" value="0.234375" />
+        <entry key="..\:/Projects/PROJECT 50/Learning/EventCalenderMVVMRoom/app/src/main/res/drawable/event_date_round_line_bg.xml" value="0.24427083333333333" />
+        <entry key="..\:/Projects/PROJECT 50/Learning/EventCalenderMVVMRoom/app/src/main/res/drawable/event_info_bg.xml" value="0.2546875" />
+        <entry key="..\:/Projects/PROJECT 50/Learning/EventCalenderMVVMRoom/app/src/main/res/drawable/ic_baseline_add.xml" value="0.2546875" />
+        <entry key="..\:/Projects/PROJECT 50/Learning/EventCalenderMVVMRoom/app/src/main/res/drawable/ic_calender.xml" value="0.23385416666666667" />
+        <entry key="..\:/Projects/PROJECT 50/Learning/EventCalenderMVVMRoom/app/src/main/res/drawable/ic_calender_blue.xml" value="0.23385416666666667" />
         <entry key="..\:/Projects/PROJECT 50/Learning/EventCalenderMVVMRoom/app/src/main/res/drawable/ic_person.xml" value="0.26296296296296295" />
         <entry key="..\:/Projects/PROJECT 50/Learning/EventCalenderMVVMRoom/app/src/main/res/drawable/round_line_bg.xml" value="0.24722222222222223" />
         <entry key="..\:/Projects/PROJECT 50/Learning/EventCalenderMVVMRoom/app/src/main/res/layout/activity_main.xml" value="0.152" />
         <entry key="..\:/Projects/PROJECT 50/Learning/EventCalenderMVVMRoom/app/src/main/res/layout/activity_main2.xml" value="0.18795289855072464" />
         <entry key="..\:/Projects/PROJECT 50/Learning/EventCalenderMVVMRoom/app/src/main/res/layout/appbar_layout.xml" value="0.21557971014492755" />
         <entry key="..\:/Projects/PROJECT 50/Learning/EventCalenderMVVMRoom/app/src/main/res/layout/calendar_cell.xml" value="0.176" />
+        <entry key="..\:/Projects/PROJECT 50/Learning/EventCalenderMVVMRoom/app/src/main/res/layout/event_cell.xml" value="0.264" />
+        <entry key="..\:/Projects/PROJECT 50/Learning/EventCalenderMVVMRoom/app/src/main/res/layout/event_info_dialog.xml" value="0.264" />
         <entry key="..\:/Projects/PROJECT 50/Learning/EventCalenderMVVMRoom/app/src/main/res/menu/menu_main.xml" value="0.25416666666666665" />
       </map>
     </option>

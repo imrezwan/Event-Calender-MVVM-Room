@@ -13,4 +13,11 @@
     <color name="lightest_grey">#FAFAFA</color>
     <color name="light_grey">#CECECE</color>
 
+    <color name="red_200">#F6C1C1</color>
+    <color name="red_500">#F36969</color>
+    <color name="green_200">#D9F3DA</color>
+    <color name="green_500">#81C383</color>
+    <color name="orange_200">#F1D4A9</color>
+    <color name="orange_500">#F19544</color>
+
 </resources>

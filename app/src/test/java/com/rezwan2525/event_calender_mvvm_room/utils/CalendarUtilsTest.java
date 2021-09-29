@@ -19,7 +19,7 @@ public class CalendarUtilsTest {
     @Test
     public void testformattedDate(){
         String str = CalendarUtils.formattedDate(localDate);
-        assert str.equals("29 September 2021")==true;
+        assert str.equals("29-09-2021")==true;
 
     }
 
