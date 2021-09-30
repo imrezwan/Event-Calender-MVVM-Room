@@ -88,7 +88,7 @@ public class EventRepo{
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
-                        Log.d(TAG, "EVENTAS: "+ events);
+                      //  Log.d(TAG, "EVENTAS: "+ events);
                         listener.isBackupDone(true);
                     }
                 })

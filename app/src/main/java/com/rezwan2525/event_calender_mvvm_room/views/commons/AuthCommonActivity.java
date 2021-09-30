@@ -18,8 +18,13 @@ public class AuthCommonActivity extends AppCompatActivity {
             Toast.makeText(this, "Please enter your email", Toast.LENGTH_LONG).show();
             return false;
         }
+
         else if(password == null || password.isEmpty()){
             Toast.makeText(this, "Please enter your password", Toast.LENGTH_LONG).show();
+            return false;
+        }
+        else if(password.length() < 6){
+            Toast.makeText(this, "Password must be greater than 6 characters", Toast.LENGTH_LONG).show();
             return false;
         }
         return true;

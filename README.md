@@ -1,2 +1,2 @@
 # Event Calender 
-Event Calender App 
+Event Calender is a simple event storing android application
