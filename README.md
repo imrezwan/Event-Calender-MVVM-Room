@@ -32,19 +32,19 @@ Event Calender is a simple event storing android application with cloud backup
 <br><br>
 
 ## How I approached
-<b>1.</b> First did the requirement analysis and use case diagram
-<b>2.</b> Google searched for UI design and got inpired from them
-<b>3.</b> Designed my UI
-<b>4.</b> Prepared android project for <b>MVVM pattern</b> (made all packages and all and spd , room, view-model etc dependencies) 
-<b>5.</b> Coded xml of homepage and Event input dialog
-<b>6.</b> Test CalenderUtils functionality using <b>JUnit4</b>
-<b>7.</b> Thought about <b>Class diagram</b> but here only simple one class so didn't design any
-<b>8.</b> Event info data store to <b>ROOM database</b> and test if it's working
-<b>8.</b> Add firebase dependencies and project add to firebase
-<b>9.</b> XML of Login Register pages and Code functionality
-<b>10.</b> Backup and restore from cloud firestore
-
+<b>1.</b> First did the requirement analysis and use case diagram<br>
+<b>2.</b> Google searched for UI design and got inpired from them<br>
+<b>3.</b> Designed my UI<br>
+<b>4.</b> Prepared android project for <b>MVVM pattern</b> (made all packages and all and spd , room, view-model etc dependencies) <br>
+<b>5.</b> Coded xml of homepage and Event input dialog<br>
+<b>6.</b> Test CalenderUtils functionality using <b>JUnit4</b><br>
+<b>7.</b> Thought about <b>Class diagram</b> but here only simple one class so didn't design any<br>
+<b>8.</b> Event info data store to <b>ROOM database</b> and test if it's working<br>
+<b>8.</b> Add firebase dependencies and project add to firebase<br>
+<b>9.</b> XML of Login Register pages and Code functionality<br>
+<b>10.</b> Backup and restore from cloud firestore<br>
 <br>
+
 ## Reason behind technology and library selection
 * <b >*MVVM (Model View ViewModel)*</b>: MVVM is a popular architectural pattern which is recommeneded by google. 
 In this pattern, user requests from UI , that request first goes to corresponding ViewModel. Then that ViewModel requests to data repository. Meanwhile, <b>Observable (LiveData)</b> continues to obserse the data changes and notify when requested data is ready to serve.
