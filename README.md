@@ -1,7 +1,7 @@
 # Event Calender 
 Event Calender is a simple event storing android application with cloud backup
 
-### Technology Used:<b>
+## Technology Used:<b>
 * Java 
 * MVVM Achitectural Pattern
 * Room 
@@ -9,9 +9,9 @@ Event Calender is a simple event storing android application with cloud backup
 * LiveData
 * Firebase Authenthication
 * Cloud Firestore</b>
-<br>
-### Problem Requirement Analysis
+<br/>
 
+## Problem Requirement Analysis
 <b>Use Cases:</b> 
 1. Authenticate user
 2. User Opens the app
@@ -27,7 +27,7 @@ Event Calender is a simple event storing android application with cloud backup
 ### UI Design On Figma
 ------------------
 
-<img src="https://user-images.githubusercontent.com/30120066/135445079-a3ad392e-5276-4cc4-9d18-5741c3a41313.jpg"  />
+<p align="center"> <img src="https://user-images.githubusercontent.com/30120066/135445079-a3ad392e-5276-4cc4-9d18-5741c3a41313.jpg" width="50%"/></p>
 
 <br><br>
 
@@ -52,22 +52,25 @@ In this pattern, user requests from UI , that request first goes to correspondin
 * *<b>ViewModel</b>*: ViewModels holds the LiveData. As it is lifecycle aware, we don't need to think about sync data with UI and don't have to request multiple time for same data.
 
 * *<b>ROOM Database</b>*: Room Database basically an abstract layer on top of SQLite database. It helps to write less code and do more of the local database works. We don't have to think about database cursor.
-
 <br>
+
 ## Challenges I faced And How I solved it
 * **MutableLiveData Nullable**: 
 <i>Problem:</i> At first observers are getting *null* value and if we use that value directly, app crashes.
 <i>Solution:</i> I had to check null before using that value
 <br>
+
 * **Executor Interface**: 
 <i>Problem:</i> While creating new account or login account, firebase provided method requires <i>Executor instance</i>. In general case, we call those method from Activity class, so, firebase snippet recommend to use "this" as paramenter in the place where Executor object needed.
 In my case, I had to use it from "AuthRepo" class. "this" was not working as "AuthRepo" is not on UI thread. 
 <i>Solution:</i> So, I created another class which extend from "Executor" interface and used instance of that class. That's how background thread was being created. 
 <br>
+
 * **postValue() vs setValue()**: 
 <i>Problem:</i> At first I used setvalue() method to assign values on a MutableLiveData instance. It was not working. Then I found out the reason. 
 <i>Solution:</i> setValue() sets value only on UI thread. In my case, I need to assign value from background thread. So, I used postValue() method.
 <br>
+
 * **Room Database Insert and Background thread**: 
 <i>Problem:</i> RoomDatabase doesn't allow to store data from Main Thread(UI Thread)
 <i>Solution:</i> I created different java thread and inserted value from there.
@@ -110,11 +113,11 @@ In my case, I had to use it from "AuthRepo" class. "this" was not working as "Au
 
 
 <p align="center">
-  <img alt="Light" src="https://user-images.githubusercontent.com/30120066/135463398-7284c294-9ca7-451f-904e-fc5e9df57872.png" width="30%">
+  <img alt="screen1" src="https://user-images.githubusercontent.com/30120066/135463398-7284c294-9ca7-451f-904e-fc5e9df57872.png" width="30%">
 &nbsp; &nbsp; &nbsp; &nbsp;
-  <img alt="Dark" src="https://user-images.githubusercontent.com/30120066/135463443-147ab93e-db9b-4c88-bd3e-d33424664c08.png" width="30%">
+  <img alt="screen2" src="https://user-images.githubusercontent.com/30120066/135463443-147ab93e-db9b-4c88-bd3e-d33424664c08.png" width="30%">
 
-  <img alt="Dark" src="https://user-images.githubusercontent.com/30120066/135463453-17af8be1-8416-4b87-86f1-6b5666ffe005.png" width="30%">
+  <img alt="screen3" src="https://user-images.githubusercontent.com/30120066/135463453-17af8be1-8416-4b87-86f1-6b5666ffe005.png" width="30%">
 </p>
 
 
