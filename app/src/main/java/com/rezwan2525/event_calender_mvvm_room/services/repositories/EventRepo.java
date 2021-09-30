@@ -113,7 +113,6 @@ public class EventRepo{
                 //Log.d(TAG, "FireDATA: "+objectCollection.size());
 
                 Gson gson = new Gson();
-
                 List<Event> eventList = new ArrayList<>();
 
                 for(Object obj:   objectCollection){
