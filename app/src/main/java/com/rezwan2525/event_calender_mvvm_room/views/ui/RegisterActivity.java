@@ -44,7 +44,7 @@ public class RegisterActivity extends AuthCommonActivity {
             }
         });
 
-        authViewModel.getIsUserLoggedIn().observe(this, new Observer<Boolean>() {
+        authViewModel.getAccountCreateState().observe(this, new Observer<Boolean>() {
             @Override
             public void onChanged(Boolean aBoolean) {
                 if(aBoolean != null){

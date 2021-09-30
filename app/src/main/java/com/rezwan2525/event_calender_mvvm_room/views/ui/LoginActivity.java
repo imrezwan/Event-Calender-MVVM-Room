@@ -92,6 +92,7 @@ public class LoginActivity extends AuthCommonActivity {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
             goToMainActivity();
+            Log.d(TAG, "User: "+user.toString());
         }
 
     }

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:id="@+id/parent_layout_of_profile_page"
     android:layout_margin="@dimen/_10sdp"
     tools:context=".views.ui.ProfileActivity">
 
@@ -38,6 +39,7 @@
         android:layout_gravity="center"
         android:background="@color/lightest_grey"
         android:gravity="center"
+        android:id="@+id/tv_email"
         android:textSize="@dimen/_14sdp"
         android:textColor="@color/purple_500"
         android:drawableLeft="@drawable/ic_baseline_email"
@@ -51,6 +53,7 @@
         android:drawableLeft="@drawable/ic_baseline_backup"
         android:backgroundTint="@color/green_500"
         android:id="@+id/btn_cloud_backup"
+        android:onClick="performCloudBackup"
         android:foreground="?actionBarItemBackground"
         android:layout_marginBottom="@dimen/_15sdp"
         />
@@ -61,6 +64,17 @@
         android:drawableLeft="@drawable/ic_baseline_restore"
         android:backgroundTint="@color/green_500"
         android:id="@+id/btn_restore"
+        android:foreground="?actionBarItemBackground"
+        android:layout_marginBottom="@dimen/_15sdp"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sign Out"
+        android:backgroundTint="@color/red_500"
+        android:id="@+id/btn_sign_out"
+        android:onClick="signOutFromApp"
         android:foreground="?actionBarItemBackground"
         />
 

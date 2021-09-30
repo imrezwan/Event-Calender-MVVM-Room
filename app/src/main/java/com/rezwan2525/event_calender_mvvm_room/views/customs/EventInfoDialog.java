@@ -28,6 +28,7 @@ import org.w3c.dom.Text;
 import java.text.Format;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.UUID;
 
 public class EventInfoDialog extends Dialog implements View.OnClickListener {
     private static String TAG = "EVENTINFO_TAG";
@@ -68,7 +69,8 @@ public class EventInfoDialog extends Dialog implements View.OnClickListener {
                 retriveTitleAndDesc();
                 if(validate()){
                     IEventInfo iEventInfo = (IEventInfo) context;
-                    iEventInfo.sendInsertRequest(new Event(eventTitleStr, eventDateStr, eventStartStr, eventEndStr, eventDescStr));
+                    iEventInfo.sendInsertRequest(new Event(UUID.randomUUID().toString()
+                            ,eventTitleStr, eventDateStr, eventStartStr, eventEndStr, eventDescStr));
                     dismiss();
                 }
             }

@@ -5,19 +5,21 @@ import android.app.Application;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 
 import com.rezwan2525.event_calender_mvvm_room.services.models.Event;
 import com.rezwan2525.event_calender_mvvm_room.services.repositories.EventRepo;
+import com.rezwan2525.event_calender_mvvm_room.services.repositories.OnEventRepo;
 
 import java.util.List;
 
-public class EventViewModel extends AndroidViewModel {
+public class EventViewModel extends AndroidViewModel implements OnEventRepo {
     EventRepo eventRepo;
-    LiveData<List<Event>> particularDateEvents;
+    MutableLiveData<Boolean> isBackUpDoneVar = new MutableLiveData<>();
 
     public EventViewModel(@NonNull Application application) {
         super(application);
-        eventRepo = new EventRepo(application);
+        eventRepo = new EventRepo(application, this);
 
     }
 
@@ -29,7 +31,20 @@ public class EventViewModel extends AndroidViewModel {
         eventRepo.insertOneEvent(event);
     }
 
+    public void backUpEventsToCloud(List<Event> events){
+        eventRepo.backupToCloud(events);
+    }
 
+    @Override
+    public void isBackupDone(boolean val) {
+        isBackUpDoneVar.postValue(val);
+    }
 
+    public MutableLiveData<Boolean> getIsBackUpDoneState(){
+        return isBackUpDoneVar;
+    }
 
+    public LiveData<List<Event>> getAllEvents(){
+        return  eventRepo.getAllEvents();
+    }
 }

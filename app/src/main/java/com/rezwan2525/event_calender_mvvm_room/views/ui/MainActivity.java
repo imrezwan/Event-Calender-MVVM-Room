@@ -48,7 +48,12 @@ public class MainActivity extends AppCompatActivity implements IEventInfo {
         initWidgets();
         initVars();
 
+        Toolbar toolbar = findViewById(R.id.main_toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("");
+
         setWeekViewDates();
+        setEventViewForEachDate(CalendarUtils.selectedDate);
     }
 
     private void setWeekViewDates() {
@@ -120,6 +125,27 @@ public class MainActivity extends AppCompatActivity implements IEventInfo {
     public void sendInsertRequest(Event event) {
         Log.d(TAG, "DATA: "+ event.toString());
         eventViewModel.insertEvent(event);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        Log.d(TAG, "==> "+item.getItemId());
+        if (item.getItemId()== R.id.my_account) {
+            goToProfilePage();
+            return true;
+        }
+        else{
+            return super.onOptionsItemSelected(item);
+        }
+
+
     }
 
 
