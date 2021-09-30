@@ -47,4 +47,8 @@ public class EventViewModel extends AndroidViewModel implements OnEventRepo {
     public LiveData<List<Event>> getAllEvents(){
         return  eventRepo.getAllEvents();
     }
+
+    public void getEventsFromCloud(){
+        eventRepo.getEventsFromCloud();
+    }
 }

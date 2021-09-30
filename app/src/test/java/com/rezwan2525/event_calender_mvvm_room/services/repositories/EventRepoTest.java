@@ -1,5 +1,6 @@
 package com.rezwan2525.event_calender_mvvm_room.services.repositories;
 
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
 import android.app.Application;
@@ -25,5 +26,17 @@ public class EventRepoTest {
         localDate = LocalDate.of(2021, 9, 29);
     }
 
+    @Test
+    public void testgetEventsFromCloud(){
+        EventRepo eventRepo  = new EventRepo(application, new OnEventRepo() {
+            @Override
+            public void isBackupDone(boolean val) {
+
+            }
+        });
+
+        eventRepo.getEventsFromCloud();
+        assertThat(true, is(true));
+    }
 
 }

@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements IEventInfo {
 
         mCalerdarAdapter = new CalendarAdapter(this,days, (position, date) -> {
             CalendarUtils.selectedDate = date;
-            Log.d(TAG, "clicked: "+ date);
+            //Log.d(TAG, "clicked: "+ date);
             setWeekViewDates();
             setEventViewForEachDate(date);
 
@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements IEventInfo {
     private void setEventViewForEachDate(LocalDate date) {
         eventViewModel.getParticularDateEvents(CalendarUtils.formattedDate(date)).observe(this, events -> {
             eventAdapter = new EventAdapter(MainActivity.this, events);
-            Log.d(TAG, events.toString());
+            //Log.d(TAG, events.toString());
             mEventRecycler.setAdapter(eventAdapter);
         });
     }
@@ -136,7 +136,7 @@ public class MainActivity extends AppCompatActivity implements IEventInfo {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        Log.d(TAG, "==> "+item.getItemId());
+        //Log.d(TAG, "==> "+item.getItemId());
         if (item.getItemId()== R.id.my_account) {
             goToProfilePage();
             return true;

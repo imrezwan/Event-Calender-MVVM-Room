@@ -64,6 +64,7 @@
         android:drawableLeft="@drawable/ic_baseline_restore"
         android:backgroundTint="@color/green_500"
         android:id="@+id/btn_restore"
+        android:onClick="restoreFromCloud"
         android:foreground="?actionBarItemBackground"
         android:layout_marginBottom="@dimen/_15sdp"
         />

@@ -99,4 +99,8 @@ public class ProfileActivity extends AppCompatActivity {
                         "Cloud Backup Done", Snackbar.LENGTH_LONG);
         snackbar.show();
     }
+
+    public void restoreFromCloud(View view) {
+        eventViewModel.getEventsFromCloud();
+    }
 }
